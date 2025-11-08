@@ -1,5 +1,6 @@
 # Usa JDK 17, compatível com seu pom.xml
-FROM openjdk:17
+FROM openjdk:17-jdk-slim
+
 
 # Define o diretório de trabalho dentro do container
 WORKDIR /app
