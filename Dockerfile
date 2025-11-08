@@ -19,4 +19,4 @@ RUN ./mvnw clean install -DskipTests -DskipSonar
 EXPOSE 8080
 
 # Comando para rodar a aplicação
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["sh", "-c", "java -jar $(ls target/*.jar | head -n 1)"]
