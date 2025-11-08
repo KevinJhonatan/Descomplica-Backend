@@ -1,17 +1,21 @@
 # Usa JDK 17, compatível com seu pom.xml
 FROM eclipse-temurin:17-jdk
 
-
-
 # Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia todos os arquivos do seu backend para dentro do container
-COPY . .
+# Copia apenas os arquivos Maven primeiro (para cache)
+COPY pom.xml mvnw ./
+COPY .mvn .mvn
+
+# Copia o frontend (src/main/webapp) para o container
+COPY src/main/webapp src/main/webapp
+
+# Copia o restante do código-fonte
+COPY src src
 
 # Roda o build do Maven (ignora os testes para acelerar)
 RUN ./mvnw clean install -DskipTests -DskipSonar
-
 
 # Expõe a porta que o backend usa (geralmente 8080)
 EXPOSE 8080
