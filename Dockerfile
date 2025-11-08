@@ -8,8 +8,6 @@ WORKDIR /app
 COPY pom.xml mvnw ./
 COPY .mvn .mvn
 
-# Copia o frontend (src/main/webapp) para o container
-COPY src/main/webapp src/main/webapp
 
 # Copia o restante do código-fonte
 COPY src src
