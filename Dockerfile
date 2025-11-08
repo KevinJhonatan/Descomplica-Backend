@@ -10,7 +10,8 @@ WORKDIR /app
 COPY . .
 
 # Roda o build do Maven (ignora os testes para acelerar)
-RUN ./mvnw clean install -DskipTests
+RUN ./mvnw clean install -DskipTests -DskipSonar
+
 
 # Expõe a porta que o backend usa (geralmente 8080)
 EXPOSE 8080
