@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "com.direitodescomplicado.web.config.ApplicationProperties",
+      "sourceType": "com.direitodescomplicado.web.config.ApplicationProperties"
+    },
+    {
+      "name": "application.liquibase",
+      "type": "com.direitodescomplicado.web.config.ApplicationProperties$Liquibase",
+      "sourceType": "com.direitodescomplicado.web.config.ApplicationProperties",
+      "sourceMethod": "getLiquibase()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "application.liquibase.async-start",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.direitodescomplicado.web.config.ApplicationProperties$Liquibase",
+      "defaultValue": true
+    }
+  ],
+  "hints": []
+}
